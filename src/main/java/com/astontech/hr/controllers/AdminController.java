@@ -114,7 +114,16 @@ public class AdminController
         // if newElement (unbound text box) has a value, add it to the list
         if(!newElement.equals(""))
         {
-            elementType.getElementList().add(new Element(newElement));
+            if(elementType.getElementList() == null)//allow updates after all elements have been removed from a list
+            {
+                List<Element> elementList = new ArrayList<Element>();
+                elementList.add(new Element(newElement));
+                elementType.setElementList(elementList);
+            }
+            else
+            {
+                elementType.getElementList().add(new Element(newElement));
+            }
         }
 
         // itterate through the list of elements and remove the rows completely that have had a item removed
