@@ -35,6 +35,7 @@ public class AdminController
     public String adminElementGet(Model model)
     {
         model.addAttribute("elementVO", new ElementVO());//form model attribute is elementVO; passes empty object and catches object on post back
+        model.addAttribute("warningAlert","visible");
         return "admin/element/element_add";
     }
 
@@ -43,8 +44,16 @@ public class AdminController
     {
         elementVO.splitNewElementsIntoArray();
         logElementVO(elementVO);
+
         saveElementTypeAndElementsFromVO(elementVO);//save element type and element type list to database
 
+        boolean success = true;
+        if(success)
+            model.addAttribute("successAlert","visible");
+        else
+            model.addAttribute("errorAlert","visible");
+
+        model.addAttribute("elementVO", new ElementVO());
         return "admin/element/element_add";
     }
 
