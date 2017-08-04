@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface ElementRepository extends CrudRepository<Element, Integer>
 {
-
+    // custom methods go in repository and into service as well
     // will auto generate the required code from the structure of the method name
     Element findByElementName(String elementName);
 
