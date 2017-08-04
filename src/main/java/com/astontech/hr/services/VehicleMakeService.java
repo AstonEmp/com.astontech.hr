@@ -20,7 +20,7 @@ public interface VehicleMakeService
     custom Repository methods
      */
     // will auto generate the required code from the structure of the method name
-    VehicleMake findByVehicleMakeMakeName(String vehicleMakeName);
+    VehicleMake findByVehicleMakeName(String vehicleMakeName);
 
     List<VehicleMake> findAllByVehicleMakeName (String vehicleMakeName);
 

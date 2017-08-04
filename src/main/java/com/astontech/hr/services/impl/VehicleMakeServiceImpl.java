@@ -4,9 +4,11 @@ import com.astontech.hr.domain.VehicleMake;
 import com.astontech.hr.repositories.VehicleMakeRepository;
 import com.astontech.hr.services.VehicleMakeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class VehicleMakeServiceImpl implements VehicleMakeService
 {
 
@@ -39,8 +41,8 @@ public class VehicleMakeServiceImpl implements VehicleMakeService
     }
 
     @Override
-    public VehicleMake findByVehicleMakeMakeName(String vehicleMakeName) {
-        return vehicleMakeRepository.findByVehicleMakeMakeName(vehicleMakeName);
+    public VehicleMake findByVehicleMakeName(String vehicleMakeName) {
+        return vehicleMakeRepository.findByVehicleMakeName(vehicleMakeName);
     }
 
     @Override

@@ -1,4 +1,6 @@
 package com.astontech.hr.domain.VO;
 
-public class VehicleModelVO {
+public class VehicleMakeVO
+{
+
 }

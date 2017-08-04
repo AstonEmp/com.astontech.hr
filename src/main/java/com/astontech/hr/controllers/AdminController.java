@@ -3,7 +3,12 @@ package com.astontech.hr.controllers;
 import com.astontech.hr.domain.Element;
 import com.astontech.hr.domain.ElementType;
 import com.astontech.hr.domain.VO.ElementVO;
+import com.astontech.hr.domain.VO.VehicleMakeVO;
+import com.astontech.hr.domain.VO.VehicleVO;
 import com.astontech.hr.services.ElementTypeService;
+import com.astontech.hr.services.VehicleMakeService;
+import com.astontech.hr.services.VehicleModelService;
+import com.astontech.hr.services.VehicleService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,17 +25,49 @@ import java.util.List;
 @Controller
 public class AdminController
 {
+    //region WIRES
     @Autowired
     private ElementTypeService elementTypeService;
 
+    @Autowired
+    private VehicleService vehicleService;
+
+    @Autowired
+    private VehicleMakeService vehicleMakeService;
+
+    @Autowired
+    private VehicleModelService vehicleModelService;
+
+    //endregion
+
     private Logger log = Logger.getLogger(AdminController.class);
 
+    //region HOME
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String adminHome()
     {
         return "admin/adminHome";
     }
+    //endregion
 
+    //region VehicleMake Add/List
+    @RequestMapping(value = "/admin/vehicle/add", method = RequestMethod.GET)
+    public String adminVehicleMakeGet(Model model)
+    {
+        model.addAttribute("vehicleVO", new VehicleVO());//form model attribute is VehicleVO
+        model.addAttribute("vehicleMakeList",vehicleMakeService.listAllVehicleMakes());
+        //passes empty objeect and catches object on postback
+//        model.addAttribute("warningAlert","visible");
+        return "admin/vehicle/vehicle_add";
+    }
+
+
+
+    //endregion
+
+
+
+    //region ELEMENT ADD/LIST
     @RequestMapping(value = "/admin/element/add", method = RequestMethod.GET)
     public String adminElementGet(Model model)
     {
@@ -57,14 +94,18 @@ public class AdminController
         return "admin/element/element_add";
     }
 
+
     @RequestMapping(value = "/admin/element/list", method = RequestMethod.GET)
     public String adminElementList(Model model)
     {
         model.addAttribute("elementTypeList", elementTypeService.listAllElementTypeNames());
         return "admin/element/element_list";
     }
+    //endregion
 
     //region HELPER METHODS
+
+    //region Element/ElementType
     private void saveElementTypeAndElementsFromVO(ElementVO elementVO)
     {
         List<Element> newElementList = new ArrayList<>();
@@ -140,6 +181,7 @@ public class AdminController
         elementTypeService.saveElementTypeName(elementType);
         return"redirect:/admin/element/edit/" + elementType.getId();
     }
+    //endregion
 
     //endregion
 }

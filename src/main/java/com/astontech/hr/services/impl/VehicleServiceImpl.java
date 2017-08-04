@@ -4,9 +4,11 @@ import com.astontech.hr.domain.Vehicle;
 import com.astontech.hr.repositories.VehicleRepository;
 import com.astontech.hr.services.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class VehicleServiceImpl implements VehicleService
 {
     @Autowired
@@ -38,22 +40,22 @@ public class VehicleServiceImpl implements VehicleService
     }
 
     @Override
-    public Vehicle findByVehicleOwnerName(String vehicleOwnerName) {
-        return vehicleRepository.findByVehicleOwnerName(vehicleOwnerName);
+    public Vehicle findByOwnerName(String ownerName) {
+        return vehicleRepository.findByOwnerName(ownerName);
     }
 
     @Override
-    public List<Vehicle> findAllByVehicleOwnerName(String vehicleOwnerName) {
-        return vehicleRepository.findAllByVehicleOwnerName(vehicleOwnerName);
+    public List<Vehicle> findAllByOwnerName(String ownerName) {
+        return vehicleRepository.findAllByOwnerName(ownerName);
     }
 
     @Override
-    public List<Vehicle> findAllByVehicleOwnerNameIgnoreCase(String vehicleOwnerName) {
-        return vehicleRepository.findAllByVehicleOwnerNameIgnoreCase(vehicleOwnerName);
+    public List<Vehicle> findAllByOwnerNameIgnoreCase(String ownerName) {
+        return vehicleRepository.findAllByOwnerNameIgnoreCase(ownerName);
     }
 
     @Override
-    public Integer countByVehicleOwnerName(String vehicleOwnerName) {
-        return vehicleRepository.countByVehicleOwnerName(vehicleOwnerName);
+    public Integer countByOwnerName(String ownerName) {
+        return vehicleRepository.countByOwnerName(ownerName);
     }
 }

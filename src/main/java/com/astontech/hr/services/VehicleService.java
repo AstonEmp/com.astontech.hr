@@ -20,11 +20,11 @@ public interface VehicleService
     custom Repository methods
      */
     // will auto generate the required code from the structure of the method name
-    Vehicle findByVehicleOwnerName(String vehicleOwnerName);
+    Vehicle findByOwnerName(String ownerName);
 
-    List<Vehicle> findAllByVehicleOwnerName (String vehicleOwnerName);
+    List<Vehicle> findAllByOwnerName (String ownerName);
 
-    List<Vehicle> findAllByVehicleOwnerNameIgnoreCase (String vehicleOwnerName);
+    List<Vehicle> findAllByOwnerNameIgnoreCase (String ownerName);
 
-    Integer countByVehicleOwnerName(String vehicleOwnerName);
+    Integer countByOwnerName(String ownerName);
 }
