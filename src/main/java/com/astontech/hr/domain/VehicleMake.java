@@ -15,7 +15,8 @@ public class VehicleMake {
     private Integer version;
 
 
-    @OneToMany
+    @OneToMany (cascade = CascadeType.ALL, fetch = FetchType.EAGER) //sub elements will be saved first and
+    // retrieving will get all nested subelements
     @JoinColumn(name = "VehicleMakeId")
     private List<VehicleModel> vehicleModelList;
 
@@ -65,5 +66,10 @@ public class VehicleMake {
 
     public void setVehicleModelList(List<VehicleModel> vehicleModelList) {
         this.vehicleModelList = vehicleModelList;
+    }
+
+    @Override
+    public String toString() {
+        return vehicleMakeName;
     }
 }

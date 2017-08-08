@@ -14,8 +14,9 @@ public class VehicleModel {
     @Version
     private Integer version;
 
-    @OneToMany (fetch = FetchType.EAGER)
-    @JoinColumn(name = "VehicleId")
+    @OneToMany (cascade = CascadeType.ALL,fetch = FetchType.EAGER) //sub elements will be saved first and
+    // retrieving will get all nested subelements
+    @JoinColumn(name = "VehicleModelId")
     private List<Vehicle> vehicleList;
 
     private String vehicleModelName;
@@ -27,7 +28,7 @@ public class VehicleModel {
         this.setVehicleModelName(vehicleModelName);
     }
 
-    public VehicleModel(List<Vehicle> vehicleList, String vehicleModelName)
+    public VehicleModel(String vehicleModelName, List<Vehicle> vehicleList)
     {
         this.setVehicleModelName(vehicleModelName);
         this.setVehicleList(vehicleList);
@@ -65,6 +66,11 @@ public class VehicleModel {
 
     public void setVehicleList(List<Vehicle> vehicleList) {
         this.vehicleList = vehicleList;
+    }
+
+    @Override
+    public String toString() {
+        return vehicleModelName;
     }
 
 

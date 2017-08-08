@@ -1,5 +1,6 @@
 package com.astontech.hr.services;
 
+import com.astontech.hr.domain.VO.VehicleVO;
 import com.astontech.hr.domain.VehicleMake;
 
 import java.util.List;
@@ -27,4 +28,8 @@ public interface VehicleMakeService
     List<VehicleMake> findAllByVehicleMakeNameIgnoreCase (String vehicleMakeName);
 
     Integer countByVehicleMakeName(String vehicleMakeName);
+
+    VehicleMake updateVehicleMake(VehicleVO vehicleVO, Integer makeId, Integer modelId, Integer vehicleId);
+
+    VehicleMake iterateThroughMakeListCheckifExistsSave(VehicleVO vehicleVO);
 }

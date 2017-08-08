@@ -47,5 +47,11 @@ public class ElementVO
         this.setNewElementArray(this.getNewElements().split("\\r?\\n"));
     }
 
+    public void splitNewMakesIntoArray()
+    {
+        //regex for splitting on a new line or carriage return is "\\r?\\n"
+        this.setNewElementArray(this.getNewElements().split("\\r?\\n"));
+    }
+
     //endregion
 }

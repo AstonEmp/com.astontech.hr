@@ -27,15 +27,58 @@
                     <div class="form-group">
                         <label for="inputNewVehicleMake" class="col-lg-2 control-label">Vehicle Make: </label>
                         <div class="col-lg-10">
-                            <form:select path="newMake" items="${vehicleMakeList}" type="text" class="form-control" id="inputNewVehicleMake" placeholder="(Select)"/>
+                            <form:select path="newVehicleMake" type="text" class="form-control" id="inputNewVehicleMake" >
+                                <form:option value= "-" label="(Select)"/>
+                                <form:options items="${vehicleMakeList}"/>
+                            </form:select>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="inputNewElements" class="col-lg-2 control-label">Elements</label>
+                        <label for="inputNewVehicleModel" class="col-lg-2 control-label">Vehicle Model: </label>
                         <div class="col-lg-10">
-                            <form:textarea path="newElements" type="text" class="form-control" rows="3" id="inputNewElements"></form:textarea>
-                            <span class="help-block">Enter each new Element on a new line.</span>
+                            <div class="col-lg-10">
+                                <form:select path="newVehicleModel" type="text" class="form-control" id="inputNewVehicleModel" >
+                                    <form:option value= "-" label="(Select)"/>
+                                    <form:options items="${vehicleModelList}"/>
+                                </form:select>
+                            </div>
+                            <%--<span class="help-block">Enter each new Element on a new line.</span>--%>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputNewVehicleOwner" class="col-lg-2 control-label">Vehicle Owner:</label>
+                        <div class="col-lg-10">
+                            <form:input path="newVehicleOwner" type="text" class="form-control" id="inputNewVehicleOwner" placeholder="Vehicle Owner"></form:input>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputNewVehicleYear" class="col-lg-2 control-label">Vehicle Year:</label>
+                        <div class="col-lg-10">
+                            <form:input path="newVehicleYear" type="number" class="form-control" id="inputNewVehicleYear" placeholder="Vehicle Year"></form:input>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputNewVehicleVIN" class="col-lg-2 control-label">Vehicle VIN:</label>
+                        <div class="col-lg-10">
+                            <form:input path="newVehicleVIN" type="text" class="form-control" id="inputNewVehicleVIN" placeholder="Vehicle VIN"></form:input>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputNewVehicleColor" class="col-lg-2 control-label">Vehicle Color:</label>
+                        <div class="col-lg-10">
+                            <form:input path="newVehicleColor" type="text" class="form-control" id="inputNewVehicleColor" placeholder="Vehicle Color"></form:input>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputNewVehicleLicensePlate" class="col-lg-2 control-label">Vehicle License Plate:</label>
+                        <div class="col-lg-10">
+                            <form:input path="newVehicleLicensePlate" type="text" class="form-control" id="inputNewVehicleLicensePlate" placeholder="Vehicle License Plate"></form:input>
                         </div>
                     </div>
 

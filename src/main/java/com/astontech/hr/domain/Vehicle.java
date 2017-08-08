@@ -19,6 +19,16 @@ public class Vehicle
     private String licensePlate;
     private String ownerName;
 
+    public Vehicle (){}
+
+    public Vehicle(String ownerName, int year, String VIN, String color, String licensePlate) {
+        this.year = year;
+        this.VIN = VIN;
+        this.color = color;
+        this.licensePlate = licensePlate;
+        this.ownerName = ownerName;
+    }
+
     public String getOwnerName() {
         return ownerName;
     }

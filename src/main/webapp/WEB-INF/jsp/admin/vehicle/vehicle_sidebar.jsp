@@ -1,0 +1,21 @@
+<div id="sidebar-wrapper" class="col-sm-2">
+    <div id="sidebar">
+        <ul class="nav list-group">
+            <li>
+                <a class="list-group-item" href="/admin/vehicle/add">New</a>
+            </li>
+            <li>
+                <a class="list-group-item" href="/admin/vehicle/list">List All</a>
+            </li>
+            <li>
+                <a class="list-group-item" href="/admin/vehicleMake/list">Edit/Delete Make</a>
+            </li>
+            <li>
+                <a class="list-group-item" href="/admin/vehicleModel/list">Edit/Delete Model</a>
+            </li>
+            <li>
+                <a class="list-group-item" href="/admin/vehicleMake/add">New Make</a>
+            </li>
+        </ul>
+    </div>
+</div>
