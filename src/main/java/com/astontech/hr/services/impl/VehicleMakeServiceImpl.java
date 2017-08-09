@@ -75,12 +75,12 @@ public class VehicleMakeServiceImpl implements VehicleMakeService
     @Override
     public VehicleMake iterateThroughMakeListCheckifExistsSave(VehicleVO vehicleVO){
         VehicleMake newVehicleMake = makeANewVehicle(vehicleVO);
-        Iterable<VehicleMake> compareMakeList = vehicleMakeRepository.findAll();
+        List<VehicleMake> compareMakeList = vehicleMakeRepository.findAll();
 
-        for (VehicleMake vMake : compareMakeList ) {
-            if (vMake.getVehicleMakeName().equalsIgnoreCase(vehicleVO.getNewVehicleMake())){
+        for (VehicleMake vehicleMake : compareMakeList ) { //checks if the model or make exists and sets it to the existing one if it does
+            if (vehicleMake.getVehicleMakeName().equalsIgnoreCase(vehicleVO.getNewVehicleMake())){
 
-                VehicleMake matchingMake = vehicleMakeRepository.findOne(vMake.getId());
+                VehicleMake matchingMake = vehicleMakeRepository.findOne(vehicleMake.getId());
 
                 for(VehicleModel vModel : matchingMake.getVehicleModelList() ){
                     if (vModel.getVehicleModelName().equalsIgnoreCase(vehicleVO.getNewVehicleModel())){
@@ -117,12 +117,16 @@ public class VehicleMakeServiceImpl implements VehicleMakeService
                     .getVehicleList().remove(orginalVehicle);//remove original vehicle
 
             vehicleMakeRepository.save(updateThisVehicle);//save removal
-            return iterateThroughMakeListCheckifExistsSave(vehicleVO);//create new vehicle make or mdoel
-        }else {
+            return iterateThroughMakeListCheckifExistsSave(vehicleVO);//create new vehicle make or model
+        }
+        else
+            {
 
             updatedVehicle.setVIN(vehicleVO.getNewVehicleVIN());//set vin
             updatedVehicle.setLicensePlate(vehicleVO.getNewVehicleLicensePlate());//set plate
             updatedVehicle.setYear(vehicleVO.getNewVehicleYear());//set year
+            updatedVehicle.setOwnerName(vehicleVO.getNewVehicleOwner());//set owner
+            updatedVehicle.setColor(vehicleVO.getNewVehicleOwner()); //set color
             return vehicleMakeRepository.save(updateThisVehicle);
         }
     }
@@ -137,6 +141,8 @@ public class VehicleMakeServiceImpl implements VehicleMakeService
         newVehicle.setLicensePlate(vehicleVO.getNewVehicleLicensePlate());
         newVehicle.setVIN(vehicleVO.getNewVehicleVIN());
         newVehicle.setYear(vehicleVO.getNewVehicleYear());
+        newVehicle.setOwnerName(vehicleVO.getNewVehicleOwner());
+        newVehicle.setColor(vehicleVO.getNewVehicleColor());
         newVehicleList.add(newVehicle);
 
 

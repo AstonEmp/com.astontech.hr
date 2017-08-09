@@ -40,28 +40,28 @@
                 <Legend>Edit Vehicle</Legend>
 
 
-                        <select>
+                        <select name="selectMake">
                         <c:forEach var="vehicleMake" items="${vehicleMakeList}">
                             <c:choose>
                                 <c:when test="${vehicleMakeEdit.id == vehicleMake.id}">
-                                    <option selected value="${vehicleMake.id}">${vehicleMake.vehicleMakeName}</option>
+                                    <option selected value="${vehicleMake.vehicleMakeName}">${vehicleMake.vehicleMakeName}</option>
                                 </c:when>
                                 <c:otherwise>
-                                    <option value="${vehicleMake.id}">${vehicleMake.vehicleMakeName}</option>
+                                    <option value="${vehicleMake.vehicleMakeName}">${vehicleMake.vehicleMakeName}</option>
                                 </c:otherwise>
                             </c:choose>
                         </c:forEach>
                         </select>
 
-                        <select>
+                        <select name="selectModel">
                             <c:forEach var="vehicleMake" items="${vehicleMakeList}">
                                 <c:forEach var="vehicleModel" items="${vehicleMake.vehicleModelList}">
                                     <c:choose>
                                         <c:when test="${vehicleModelEdit.id == vehicleModel.id}">
-                                            <option selected value="${vehicleModel.id}">${vehicleModel.vehicleModelName}</option>
+                                            <option selected value="${vehicleModel.vehicleModelName}">${vehicleModel.vehicleModelName}</option>
                                         </c:when>
                                         <c:otherwise>
-                                            <option value="${vehicleModel.id}">${vehicleModel.vehicleModelName}</option>
+                                            <option value="${vehicleModel.vehicleModelName}">${vehicleModel.vehicleModelName}</option>
                                         </c:otherwise>
                                     </c:choose>
                                 </c:forEach>

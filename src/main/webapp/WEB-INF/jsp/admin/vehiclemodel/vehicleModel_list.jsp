@@ -29,8 +29,6 @@
                     <tr>
                         <td>${vehicleModel.id}</td>
                         <td>${vehicleModel.vehicleModelName}</td>
-                        <td><a href="/admin/vehicleModel/edit/${vehicleModel.id}">Edit</a></td>
-                        <td><a href="/admin/vehicleModel/delete/${vehicleModel.id}">Delete</a></td>
                     </tr>
                     </c:forEach>
                 </c:forEach>

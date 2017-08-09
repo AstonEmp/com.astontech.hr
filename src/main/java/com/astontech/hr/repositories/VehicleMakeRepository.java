@@ -11,6 +11,8 @@ public interface VehicleMakeRepository extends CrudRepository<VehicleMake,Intege
 custom Repository methods
  */
     // will auto generate the required code from the structure of the method name
+    List<VehicleMake> findAll();
+
     VehicleMake findByVehicleMakeName(String vehicleMakeName);
 
     List<VehicleMake> findAllByVehicleMakeName (String vehicleMakeName);

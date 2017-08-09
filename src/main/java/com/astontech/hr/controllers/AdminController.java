@@ -4,6 +4,7 @@ import com.astontech.hr.domain.*;
 import com.astontech.hr.domain.VO.ElementVO;
 import com.astontech.hr.domain.VO.VehicleMakeVO;
 import com.astontech.hr.domain.VO.VehicleVO;
+import com.astontech.hr.repositories.VehicleMakeRepository;
 import com.astontech.hr.services.ElementTypeService;
 import com.astontech.hr.services.VehicleMakeService;
 import com.astontech.hr.services.VehicleModelService;
@@ -43,6 +44,9 @@ public class AdminController
     @Autowired
     private VehicleModelService vehicleModelService;
 
+    @Autowired
+    private VehicleMakeRepository vehicleMakeRepository;
+
     //endregion
 
     private Logger log = Logger.getLogger(AdminController.class);
@@ -70,7 +74,20 @@ public class AdminController
     @RequestMapping(value = "/admin/vehicle/add", method = RequestMethod.POST)
     public String adminVehiclePost(VehicleVO vehicleVO, Model model)
     {
-        saveVehicleVO(vehicleVO);//save element type and element type list to database
+//        for(VehicleMake vehicleMake : vehicleMakeRepository.findAllByVehicleMakeName(vehicleVO.getNewVehicleMake()))
+//        {
+//            for(VehicleModel vehicleModel : vehicleMake.getVehicleModelList())
+//            {
+//                if(vehicleModel.getVehicleModelName().equals(vehicleVO.getNewVehicleModel()))
+//                {
+                    saveVehicleVO(vehicleVO);//save vehicle to list
+//                }
+//                else if(!(vehicleModel.getVehicleModelName().equals(vehicleVO.getNewVehicleModel())))
+//                {
+//                    vehicleVO.setNewVehicleMake(vehicleMake.getVehicleMakeName())
+//                }
+//            }
+//        }
 
 //        boolean success = true;
 //        if(success)
@@ -265,10 +282,7 @@ public class AdminController
     //region VEHICLE
     private void saveVehicleVO(VehicleVO vehicleVO)
     {
-        Vehicle newVehicle = new Vehicle(vehicleVO.getNewVehicleOwner(),vehicleVO.getNewVehicleYear(),vehicleVO.getNewVehicleVIN(),
-                vehicleVO.getNewVehicleColor(),vehicleVO.getNewVehicleLicensePlate());
-
-        vehicleService.saveVehicle(newVehicle);
+        vehicleMakeService.iterateThroughMakeListCheckifExistsSave(vehicleVO);
     }
 
     @RequestMapping(value = "/admin/vehicle/edit/{makeId_modelId_vehicleId}", method = RequestMethod.GET)
@@ -289,11 +303,17 @@ public class AdminController
     }
 
     @RequestMapping(value = "/admin/vehicle/edit", method = RequestMethod.POST)
-    public String adminVehicleUpdatePost(VehicleVO vehicleVO){
+    public String adminVehicleUpdatePost(VehicleVO vehicleVO, @RequestParam("selectMake") String selectMake, @RequestParam("selectModel") String selectModel){
+
+        vehicleVO.setNewVehicleMake(selectMake);
+        vehicleVO.setNewVehicleModel(selectModel);
+
+        vehicleService.deleteVehicle(vehicleId);
 
 
 
-        vehicleMakeService.updateVehicleMake(vehicleVO,makeId,modelId,vehicleId);
+
+        vehicleMakeService.iterateThroughMakeListCheckifExistsSave(vehicleVO);
 
         return "redirect:list";
     }
