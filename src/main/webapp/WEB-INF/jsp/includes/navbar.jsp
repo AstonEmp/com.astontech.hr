@@ -19,9 +19,10 @@
                 <li><a href="/contact">Contact</a></li>
                 <li><a href="/admin">Admin</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right"></ul>
-            <%--LOGIN LINK--%>
-            <li><a href="#">Login</a> </li>
+            <ul class="nav navbar-nav navbar-right">
+            <%--LOGOUT LINK--%>
+            <li><a href="/logout">Logout</a> </li>
+            </ul>
         </div>
     </div>
 </nav>

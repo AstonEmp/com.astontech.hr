@@ -1,8 +1,6 @@
 package com.astontech.hr.bootstrap;
 
-import com.astontech.hr.domain.Vehicle;
-import com.astontech.hr.domain.VehicleMake;
-import com.astontech.hr.domain.VehicleModel;
+import com.astontech.hr.domain.*;
 import com.astontech.hr.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
@@ -15,63 +13,59 @@ import java.util.List;
 @Component
 public class SeedData implements ApplicationListener<ContextRefreshedEvent>
 {
-    @Autowired
-    private ElementService elementService;
+    private final ElementTypeService elementTypeService;
+
+    private final VehicleMakeService vehicleMakeService;
 
     @Autowired
-    private ElementTypeService elementTypeService;
-
-    @Autowired
-    private VehicleMakeService vehicleMakeService;
-
-    @Autowired
-    private VehicleService vehicleService;
-
-    @Autowired
-    private VehicleModelService vehicleModelService;
+    public SeedData(ElementTypeService elementTypeService,VehicleMakeService vehicleMakeService)
+    {
+        this.elementTypeService = elementTypeService;
+        this.vehicleMakeService = vehicleMakeService;
+    }
 
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event)
     {
-        generateElementAndElementTypeNames();
+        //generateElementAndElementTypeNames();
     }
 
     private void generateElementAndElementTypeNames()
     {
-//        ElementType laptopType = new ElementType("Laptop");
-//        ElementType tvType = new ElementType("TV");
-//        ElementType tacoType = new ElementType("Taco");
-//
-//        List<Element> elementList = new ArrayList<>();
-//        List<Element> elementList2 = new ArrayList<>();
-//        List<Element> elementList3 = new ArrayList<>();
-//
-//        elementList.add(new Element("Acer"));
-//        elementList.add(new Element("Dell"));
-//        elementList.add(new Element("Samsung"));
-//        elementList.add(new Element("Apple"));
-//        elementList.add(new Element("Asus"));
-//
-//        elementList2.add(new Element("Samsung"));
-//        elementList2.add(new Element("LG"));
-//        elementList2.add(new Element("Toshiba"));
-//        elementList2.add(new Element("Sony"));
-//        elementList2.add(new Element("Insignia"));
-//
-//        elementList3.add(new Element("Chicken"));
-//        elementList3.add(new Element("Beef"));
-//        elementList3.add(new Element("Steak"));
-//        elementList3.add(new Element("Bean"));
-//
-//
-//        laptopType.setElementList(elementList);
-//        tvType.setElementList(elementList2);
-//        tacoType.setElementList(elementList3);
-//
-//        elementTypeService.saveElementType(laptopType);
-//        elementTypeService.saveElementType(tvType);
-//        elementTypeService.saveElementType(tacoType);
+        ElementType laptopType = new ElementType("Laptop");
+        ElementType tvType = new ElementType("TV");
+        ElementType tacoType = new ElementType("Taco");
+
+        List<Element> elementList = new ArrayList<>();
+        List<Element> elementList2 = new ArrayList<>();
+        List<Element> elementList3 = new ArrayList<>();
+
+        elementList.add(new Element("Acer"));
+        elementList.add(new Element("Dell"));
+        elementList.add(new Element("Samsung"));
+        elementList.add(new Element("Apple"));
+        elementList.add(new Element("Asus"));
+
+        elementList2.add(new Element("Samsung"));
+        elementList2.add(new Element("LG"));
+        elementList2.add(new Element("Toshiba"));
+        elementList2.add(new Element("Sony"));
+        elementList2.add(new Element("Insignia"));
+
+        elementList3.add(new Element("Chicken"));
+        elementList3.add(new Element("Beef"));
+        elementList3.add(new Element("Steak"));
+        elementList3.add(new Element("Bean"));
+
+
+        laptopType.setElementList(elementList);
+        tvType.setElementList(elementList2);
+        tacoType.setElementList(elementList3);
+
+        elementTypeService.saveElementTypeName(laptopType);
+        elementTypeService.saveElementTypeName(tvType);
+        elementTypeService.saveElementTypeName(tacoType);
 
         VehicleMake vehicleMake = new VehicleMake("Chevrolet");
         VehicleMake vehicleMake2 = new VehicleMake("Ford");
