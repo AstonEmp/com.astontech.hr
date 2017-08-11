@@ -17,11 +17,14 @@ public class SeedData implements ApplicationListener<ContextRefreshedEvent>
 
     private final VehicleMakeService vehicleMakeService;
 
+    private final EmployeeService employeeService;
+
     @Autowired
-    public SeedData(ElementTypeService elementTypeService,VehicleMakeService vehicleMakeService)
+    public SeedData(ElementTypeService elementTypeService,VehicleMakeService vehicleMakeService, EmployeeService employeeService)
     {
         this.elementTypeService = elementTypeService;
         this.vehicleMakeService = vehicleMakeService;
+        this.employeeService = employeeService;
     }
 
 
@@ -29,43 +32,39 @@ public class SeedData implements ApplicationListener<ContextRefreshedEvent>
     public void onApplicationEvent(ContextRefreshedEvent event)
     {
         //generateElementAndElementTypeNames();
+        //generateVehiclesVehicleModelsAndVehicleMakes();
+        //generateEmployees();
     }
 
-    private void generateElementAndElementTypeNames()
+    public void generateEmployees()
     {
-        ElementType laptopType = new ElementType("Laptop");
-        ElementType tvType = new ElementType("TV");
-        ElementType tacoType = new ElementType("Taco");
+        Employee employee = new Employee();
+        employee.setFirstName("Eric");
+        employee.setLastName("Braun");
+        employee.setBackground("Java Developer");
+        employeeService.saveEmployee(employee);
 
-        List<Element> elementList = new ArrayList<>();
-        List<Element> elementList2 = new ArrayList<>();
-        List<Element> elementList3 = new ArrayList<>();
+        Employee employee2 = new Employee();
+        employee2.setFirstName("Jesse");
+        employee2.setLastName("Braun");
+        employee2.setBackground("Electrical Engineer");
+        employeeService.saveEmployee(employee);
 
-        elementList.add(new Element("Acer"));
-        elementList.add(new Element("Dell"));
-        elementList.add(new Element("Samsung"));
-        elementList.add(new Element("Apple"));
-        elementList.add(new Element("Asus"));
+        Employee employee3 = new Employee();
+        employee3.setFirstName("Tony");
+        employee3.setLastName("Morano");
+        employee3.setBackground("Java Developer");
+        employeeService.saveEmployee(employee);
 
-        elementList2.add(new Element("Samsung"));
-        elementList2.add(new Element("LG"));
-        elementList2.add(new Element("Toshiba"));
-        elementList2.add(new Element("Sony"));
-        elementList2.add(new Element("Insignia"));
+        Employee employee4 = new Employee();
+        employee4.setFirstName("Bipin");
+        employee4.setLastName("Butala");
+        employee4.setBackground("Java Developer");
+        employeeService.saveEmployee(employee);
+    }
 
-        elementList3.add(new Element("Chicken"));
-        elementList3.add(new Element("Beef"));
-        elementList3.add(new Element("Steak"));
-        elementList3.add(new Element("Bean"));
-
-
-        laptopType.setElementList(elementList);
-        tvType.setElementList(elementList2);
-        tacoType.setElementList(elementList3);
-
-        elementTypeService.saveElementTypeName(laptopType);
-        elementTypeService.saveElementTypeName(tvType);
-        elementTypeService.saveElementTypeName(tacoType);
+    public void generateVehiclesVehicleModelsAndVehicleMakes()
+    {
 
         VehicleMake vehicleMake = new VehicleMake("Chevrolet");
         VehicleMake vehicleMake2 = new VehicleMake("Ford");
@@ -115,6 +114,43 @@ public class SeedData implements ApplicationListener<ContextRefreshedEvent>
         vehicleMakeService.saveVehicleMake(vehicleMake);
         vehicleMakeService.saveVehicleMake(vehicleMake2);
         vehicleMakeService.saveVehicleMake(vehicleMake3);
+    }
+
+    private void generateElementAndElementTypeNames()
+    {
+        ElementType laptopType = new ElementType("Laptop");
+        ElementType tvType = new ElementType("TV");
+        ElementType tacoType = new ElementType("Taco");
+
+        List<Element> elementList = new ArrayList<>();
+        List<Element> elementList2 = new ArrayList<>();
+        List<Element> elementList3 = new ArrayList<>();
+
+        elementList.add(new Element("Acer"));
+        elementList.add(new Element("Dell"));
+        elementList.add(new Element("Samsung"));
+        elementList.add(new Element("Apple"));
+        elementList.add(new Element("Asus"));
+
+        elementList2.add(new Element("Samsung"));
+        elementList2.add(new Element("LG"));
+        elementList2.add(new Element("Toshiba"));
+        elementList2.add(new Element("Sony"));
+        elementList2.add(new Element("Insignia"));
+
+        elementList3.add(new Element("Chicken"));
+        elementList3.add(new Element("Beef"));
+        elementList3.add(new Element("Steak"));
+        elementList3.add(new Element("Bean"));
+
+
+        laptopType.setElementList(elementList);
+        tvType.setElementList(elementList2);
+        tacoType.setElementList(elementList3);
+
+        elementTypeService.saveElementTypeName(laptopType);
+        elementTypeService.saveElementTypeName(tvType);
+        elementTypeService.saveElementTypeName(tacoType);
 
     }
 }
