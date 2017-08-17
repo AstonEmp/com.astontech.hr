@@ -39,4 +39,9 @@ public class ProjectServiceImpl implements ProjectService
     public void deleteProject(Integer id) {
         projectRepository.delete(id);
     }
+
+    @Override
+    public void deleteAll() {
+        projectRepository.deleteAll();
+    }
 }

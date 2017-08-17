@@ -13,4 +13,6 @@ public interface EmployeeService
     Iterable<Employee> saveEmployeeList(Iterable<Employee> employeeIterable);
 
     void deleteEmployee(Integer id);
+
+    void deleteAll();
 }

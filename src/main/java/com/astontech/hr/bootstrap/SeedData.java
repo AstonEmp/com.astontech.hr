@@ -1,6 +1,7 @@
 package com.astontech.hr.bootstrap;
 
 import com.astontech.hr.domain.*;
+import com.astontech.hr.repositories.EmployeeRepository;
 import com.astontech.hr.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
@@ -19,9 +20,13 @@ public class SeedData implements ApplicationListener<ContextRefreshedEvent>
 
     private final EmployeeService employeeService;
 
+    private final ContactService contactService;
+
     @Autowired
-    public SeedData(ElementTypeService elementTypeService,VehicleMakeService vehicleMakeService, EmployeeService employeeService)
+    public SeedData(ElementTypeService elementTypeService,VehicleMakeService vehicleMakeService, EmployeeService employeeService,
+                    ContactService contactService)
     {
+        this.contactService = contactService;
         this.elementTypeService = elementTypeService;
         this.vehicleMakeService = vehicleMakeService;
         this.employeeService = employeeService;
@@ -34,6 +39,7 @@ public class SeedData implements ApplicationListener<ContextRefreshedEvent>
         //generateElementAndElementTypeNames();
         //generateVehiclesVehicleModelsAndVehicleMakes();
         //generateEmployees();
+        generateContacts();
     }
 
     public void generateEmployees()
@@ -152,5 +158,65 @@ public class SeedData implements ApplicationListener<ContextRefreshedEvent>
         elementTypeService.saveElementTypeName(tvType);
         elementTypeService.saveElementTypeName(tacoType);
 
+    }
+
+    public void generateContacts()
+    {
+
+        contactService.deleteAll();
+        Project project = new Project();
+        project.setProjectName("Rest Project");
+
+        Project project2 = new Project();
+        project2.setProjectName("Client Project");
+
+        Project project3 = new Project();
+        project3.setProjectName("Java Project");
+
+        Project project4 = new Project();
+        project4.setProjectName("New Project");
+
+        List<Project> projectList = new ArrayList<>();
+        projectList.add(project);
+        projectList.add(project2);
+
+
+        List<Project> projectList2 = new ArrayList<>();
+        projectList2.add(project3);
+        projectList2.add(project4);
+
+        List<Address> addressList = new ArrayList<>();
+        List<Address> addressList2 = new ArrayList<>();
+
+        addressList.add(new Address("111 Main Street","Fargo","ND","58104"));
+        addressList.add(new Address("121 South Street","Minneapolis","MN","55404"));
+
+        addressList2.add(new Address("143 North Street","Sioux Falls","SD","13245"));
+        addressList2.add(new Address("178 West Street","Big Sky","MT","12345"));
+
+        Employee employee = new Employee();
+        employee.setFirstName("Eric");
+        employee.setLastName("Braun");
+        employee.setBackground("Java Developer");
+        employee.setProjectList(projectList);
+
+        Employee employee2 = new Employee();
+        employee2.setFirstName("Bill");
+        employee2.setLastName("Joe");
+        employee2.setBackground("Master Developer");
+        employee2.setProjectList(projectList2);
+
+        Contact contact = new Contact();
+        contact.setEmailAddress("Eric@outlook.com");
+        contact.setAddressList(addressList);
+        contact.setEmployee(employee);
+
+        Contact contact2 = new Contact();
+        contact2.setEmailAddress("Bill@outlook.com");
+        contact2.setAddressList(addressList2);
+        contact2.setEmployee(employee2);
+
+        contactService.saveContact(contact);
+        contactService.saveContact(contact2);
     }
 }

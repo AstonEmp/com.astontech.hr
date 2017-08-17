@@ -13,4 +13,6 @@ public interface ProjectService
     Iterable<Project> saveProjectList(Iterable<Project> projectIterable);
 
     void deleteProject(Integer id);
+
+    void deleteAll();
 }
