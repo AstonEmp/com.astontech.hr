@@ -40,8 +40,8 @@ public class ContactRest
 
     // Save
     @RequestMapping (value = "/",method = RequestMethod.POST)
-    public Contact save(@ModelAttribute("contact")Contact contact)
-    //public Contact save(@RequestBody Contact contact)//for postman
+    //public Contact save(@ModelAttribute("contact")Contact contact)
+    public Contact save(@RequestBody Contact contact)
     {
         return contactService.saveContact(contact);
     }

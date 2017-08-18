@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b6a0943-62f7-430a-9f87-5a81fca841bc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/astontech/hr/rest/ContactRest.class" afterPath="$PROJECT_DIR$/target/classes/com/astontech/hr/rest/ContactRest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/ebraun.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/ebraun.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/astontech/hr/domain/Address.java" afterPath="$PROJECT_DIR$/src/main/java/com/astontech/hr/domain/Address.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/astontech/hr/rest/ContactRest.java" afterPath="$PROJECT_DIR$/src/main/java/com/astontech/hr/rest/ContactRest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contact.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contact.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/contact.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/contact.js" />
@@ -18,53 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="employee.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/employee.js">
+      <file leaf-file-name="Address.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/astontech/hr/domain/Address.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
-              <folding>
-                <element signature="n#!!block;n#buildTable#0" expanded="false" />
-                <element signature="e#2004#2053#0" expanded="false" />
-                <element signature="n#!!block;n#editEmployee#0" expanded="false" />
-                <element signature="e#2179#2207#0" expanded="false" />
-                <element signature="e#2229#2611#0" expanded="false" />
-                <element signature="n#!!block;n#deleteModal#0" expanded="false" />
-                <element signature="e#2968#3025#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contact.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/contact.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="128" column="5" lean-forward="false" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
-              <folding>
-                <element signature="n#!!block;n#buildTable#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contact.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contact.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="131" column="87" lean-forward="false" selection-start-line="131" selection-start-column="87" selection-end-line="131" selection-end-column="87" />
-              <folding>
-                <marker date="1502997274049" expanded="false" signature="6668:6675" ph="×" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContactRest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/astontech/hr/rest/ContactRest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="42" column="24" lean-forward="false" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+            <state relative-caret-position="954">
+              <caret line="76" column="5" lean-forward="true" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -138,7 +99,6 @@
         <option value="$PROJECT_DIR$/src/test/java/services/AddressServiceTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/repositories/AddressRepositoryTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/repositories/ContactRepositoryTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/astontech/hr/domain/Address.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/astontech/hr/services/AddressService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/astontech/hr/services/impl/AddressServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/astontech/hr/services/ContactService.java" />
@@ -154,10 +114,11 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/astontech/hr/bootstrap/SeedData.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/employee.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/astontech/hr/rest/ContactRest.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/employee.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contact.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/astontech/hr/rest/ContactRest.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/contact.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/astontech/hr/domain/Address.java" />
       </list>
     </option>
   </component>
@@ -667,7 +628,7 @@
       <workItem from="1502366687381" duration="26466000" />
       <workItem from="1502466443019" duration="4062000" />
       <workItem from="1502808728454" duration="60890000" />
-      <workItem from="1502989743942" duration="14497000" />
+      <workItem from="1502989743942" duration="37500000" />
     </task>
     <servers />
   </component>
@@ -704,7 +665,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225082000" />
+    <option name="totallyTimeSpent" value="248085000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="27" width="1920" height="1053" extended-state="6" />
@@ -712,16 +673,16 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33626375" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34463894" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33626375" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34395605" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2553419" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -738,7 +699,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -750,7 +711,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1044,21 +1005,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/astontech/hr/rest/EmployeeRest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-          <folding>
-            <element signature="e#539#540#0" expanded="false" />
-            <element signature="e#593#594#0" expanded="false" />
-            <element signature="e#715#716#0" expanded="false" />
-            <element signature="e#772#773#0" expanded="false" />
-            <element signature="e#910#911#0" expanded="false" />
-            <element signature="e#968#969#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/astontech/hr/domain/Element.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1150,13 +1096,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/astontech/hr/domain/Contact.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/astontech/hr/rest/EmployeeRest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/employee.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="46" column="21" lean-forward="true" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+        <state relative-caret-position="288">
+          <caret line="35" column="46" lean-forward="true" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
           <folding>
             <element signature="n#!!block;n#buildTable#0" expanded="false" />
-            <element signature="e#2004#2053#0" expanded="false" />
             <element signature="n#!!block;n#editEmployee#0" expanded="false" />
             <element signature="e#2179#2207#0" expanded="false" />
             <element signature="e#2229#2611#0" expanded="false" />
@@ -1166,49 +1127,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/astontech/hr/domain/Contact.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="25" column="41" lean-forward="false" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/astontech/hr/domain/Address.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/astontech/hr/rest/ContactRest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="42" column="24" lean-forward="false" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="260">
+          <caret line="41" column="4" lean-forward="true" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+          <folding>
+            <element signature="e#1236#1237#0" expanded="true" />
+            <element signature="e#1294#1295#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/contact.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="131" column="87" lean-forward="false" selection-start-line="131" selection-start-column="87" selection-end-line="131" selection-end-column="87" />
+        <state relative-caret-position="368">
+          <caret line="106" column="61" lean-forward="false" selection-start-line="106" selection-start-column="61" selection-end-line="106" selection-end-column="61" />
           <folding>
-            <marker date="1502997274049" expanded="false" signature="6668:6675" ph="×" />
+            <marker date="1503072238245" expanded="false" signature="5923:5930" ph="×" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/contact.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="128" column="5" lean-forward="false" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
+        <state relative-caret-position="1182">
+          <caret line="167" column="9" lean-forward="true" selection-start-line="167" selection-start-column="9" selection-end-line="167" selection-end-column="9" />
           <folding>
             <element signature="n#!!block;n#buildTable#0" expanded="false" />
+            <element signature="n#!!block;n#deleteRow#0" expanded="false" />
+            <element signature="n#!!block;n#projectTable#0" expanded="false" />
+            <element signature="n#!!block;n#addressTable#0" expanded="false" />
+            <element signature="n#!!block;n#insertContact#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/astontech/hr/domain/Address.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="954">
+          <caret line="76" column="5" lean-forward="true" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

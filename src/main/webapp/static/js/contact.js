@@ -6,7 +6,7 @@ function buildTable() {
         //console.log(data)
         var $tbody = $('#contact-table').find('tbody');
         $.each(data, function(index, single) {
-            var fullName = single.employee.firstName + " " + single.employee.lastName;
+            var fullName = single.employee.firstName + " " + single.employee.lastName
             var $tr = $("<tr>");
             $tr.append(
                 "<td>" + single.id + "</td>" +
@@ -31,6 +31,39 @@ function buildTable() {
     });
 }
 
+function deleteRow(r) {
+    var row = r.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+}
+
+function projectTable() {
+
+    var $tbody = $('#project-table').find('tbody');
+    var $tr = $("<tr>");
+
+
+    $tr.append(
+        "<td>" + "<input class='form-control' id='inputProjectName' placeholder='Project Name' type='text'>" + "</td>" +
+        "<td>" + "<input class='form-control' id='inputClientName' placeholder='Client Name' type='text'>" + "</td>" +
+        "<td>" + "<input class='form-control' id='inputRate' placeholder='Rate' type='text'></td>" +
+        "<td>" + "<input type='button' value='Delete' onclick='deleteRow(this)'>" + "</td>");
+    $tbody.append($tr);
+}
+
+function addressTable() {
+    var $tbody = $('#address-table').find('tbody');
+    var $tr = $("<tr>");
+
+
+    $tr.append(
+        "<td>" + "<input class='form-control' id='inputStreet' placeholder='Street' type='text'>" + "</td>" +
+        "<td>" + "<input class='form-control' id='inputCity' placeholder='City' type='text'>" + "</td>" +
+        "<td>" + "<input class='form-control' id='inputState' placeholder='State' type='text'></td>" +
+        "<td>" + "<input class='form-control' id='inputZip' placeholder='Zip' type='text'></td>" +
+        "<td>" + "<input type='button' value='Delete' onclick='deleteRow(this)'>" + "</td>");
+    $tbody.append($tr);
+}
+
 function insertContact() {
     //clear fields in modal
     $('#contactId').val("");
@@ -43,6 +76,7 @@ function insertContact() {
     $('#projectVersion').val("");
     $('#inputFirstName').val("");
     $('#inputLastName').val("");
+    $('#inputEmail').val("");
     $('#textAreaBackground').val("");
     $('#inputProjectName').val("");
     $('#inputClientName').val("");
@@ -55,6 +89,11 @@ function insertContact() {
 
     //open modal
     $('#contactModal').modal('show');
+
+    $('#project-table > tbody').html('');
+    $('#address-table > tbody').html('');
+    projectTable();
+    addressTable();
 }
 
 function saveContact() {
@@ -73,8 +112,8 @@ function saveContact() {
     var fieldRate = $('#inputFieldRate').val();
     var addressId = $('#addressId').val();
     var addressVersion = $('#addressVersion').val();
-    var streetAddress = $('#inputstreet').val();
-    var zip = $('#inputzip').val();
+    var streetAddress = $('#inputStreet').val();
+    var zip = $('#inputZip').val();
     var state = $('#inputState').val();
     var city = $('#inputCity').val();
 
@@ -108,7 +147,7 @@ function saveContact() {
                 // }
             ]
         },
-        addressList:
+        addressList: [
             {
 
                 id: addressId,
@@ -126,6 +165,8 @@ function saveContact() {
             //     state: state,
             //     city: city
             // }
+        ]
+
     }
 
     console.log(contact);
@@ -133,13 +174,13 @@ function saveContact() {
     // asynchronous javascript call
     $.ajax({
         type: "post",
-        data: contact,
-        url: "/api/contact/",
-        async: true,
-        contentType: "application/json",
         dataType: "json",
-        success: function() {
-            window.location.reload();
-        }
+        contentType: "application/json",
+        url: "/api/contact/",
+        data: JSON.stringify(contact),
+        async: true,
+        // success: function() {
+        //     window.location.reload();
+        // }
     })
 }

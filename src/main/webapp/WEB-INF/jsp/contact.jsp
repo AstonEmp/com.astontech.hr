@@ -50,6 +50,7 @@
                     <form class="form-horizontal">
 
                         <fieldset>
+
                             <hidden id="employeeId" />
                             <hidden id="employeeVersion" />
                             <hidden id="contactId" />
@@ -89,39 +90,38 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="inputProjectName" class="col-lg-2 control-label">Project</label>
-                                <div class="col-lg-10">
-                                    <input class="form-control" id="inputProjectName" placeholder="Project" type="text">
-                                </div>
-                                <label for="inputClientName" class="col-lg-2 control-label">Client</label>
-                                <div class="col-lg-10">
-                                    <input class="form-control" id="inputClientName" placeholder="Client" type="text">
-                                </div>
-                                <label for="inputFieldRate" class="col-lg-2 control-label">Rate</label>
-                                <div class="col-lg-10">
-                                    <input class="form-control" id="inputFieldRate" placeholder="Rate" type="text">
-                                </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label for="inputStreet" class="col-lg-2 control-label">Street</label>
-                                <div class="col-lg-10">
-                                    <input class="form-control" id="inputStreet" placeholder="Street" type="text">
-                                </div>
-                                <label for="inputCity" class="col-lg-2 control-label">City</label>
-                                <div class="col-lg-10">
-                                    <input class="form-control" id="inputCity" placeholder="City" type="text">
-                                </div>
-                                <label for="inputState" class="col-lg-2 control-label">State</label>
-                                <div class="col-lg-10">
-                                    <input class="form-control" id="inputState" placeholder="State" type="text">
-                                </div>
-                                <label for="inputZip" class="col-lg-2 control-label">Zip</label>
-                                <div class="col-lg-10">
-                                    <input class="form-control" id="inputZip" placeholder="Zip" type="text">
-                                </div>
-                            </div>
+                            <table id="project-table" class="table table-striped table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>Client Name</th>
+                                    <th>Field Rate</th>
+                                    <th>Delete Row</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <%--jquery will append our data here...     --%>
+                                </tbody>
+                            </table>
+                            <button type="button" onclick="projectTable()" class="btn btn-primary">Add Row</button>
+
+
+                            <table id="address-table" class="table table-striped table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Street</th>
+                                    <th>City</th>
+                                    <th>State</th>
+                                    <th>Zip</th>
+                                    <th>Delete Row</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <%--jquery will append our data here...     --%>
+                                </tbody>
+                            </table>
+                            <button type="button" onclick="addressTable()" class="btn btn-primary">Add Row</button>
 
                         </fieldset>
                     </form>
