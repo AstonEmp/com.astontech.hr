@@ -24,7 +24,7 @@ function buildTable() {
                 $s2.append('<option value="'+addr.streetAddress +'">'+addr.streetAddress+'</option>');
             });
             $tr.append($("<td/>").append($s2));
-            $tr.append("<td>" + "<button onclick='editEmployee(" + single.id + ")'>Edit</button>" + "</td>" +
+            $tr.append("<td>" + "<button onclick='editContact(" + single.id + ")'>Edit</button>" + "</td>" +
                 "<td>" + "<button data-toggle='modal' data-target='#confirmDeleteModal' data-record-id='" + single.id + "'>Delete</button>" + "</td>");
             $tbody.append($tr);
         });
@@ -36,32 +36,48 @@ function deleteRow(r) {
     row.parentNode.removeChild(row);
 }
 
-function projectTable() {
+var projectRows = 0;
 
+function projectTable() {
     var $tbody = $('#project-table').find('tbody');
+
     var $tr = $("<tr>");
 
 
     $tr.append(
-        "<td>" + "<input class='form-control' id='inputProjectName' placeholder='Project Name' type='text'>" + "</td>" +
-        "<td>" + "<input class='form-control' id='inputClientName' placeholder='Client Name' type='text'>" + "</td>" +
-        "<td>" + "<input class='form-control' id='inputRate' placeholder='Rate' type='text'></td>" +
+
+        "<td>" + "<hidden id='projectId" + projectRows + "'/>" +
+        "<hidden id='projectVersion" + projectRows + "'/>" +
+        "<input class='form-control' id='inputProjectName" + projectRows + "' placeholder='Project Name' type='text'>" + "</td>" +
+        "<td>" + "<input class='form-control' id='inputClientName" + projectRows + "' placeholder='Client Name' type='text'>" + "</td>" +
+        "<td>" + "<input class='form-control' id='inputRate" + projectRows + "' placeholder='Rate' type='text'></td>" +
         "<td>" + "<input type='button' value='Delete' onclick='deleteRow(this)'>" + "</td>");
+
     $tbody.append($tr);
+
+    projectRows = projectRows + 1;
 }
 
+var addressRows = 0;
+
 function addressTable() {
+
     var $tbody = $('#address-table').find('tbody');
+
     var $tr = $("<tr>");
 
 
     $tr.append(
-        "<td>" + "<input class='form-control' id='inputStreet' placeholder='Street' type='text'>" + "</td>" +
-        "<td>" + "<input class='form-control' id='inputCity' placeholder='City' type='text'>" + "</td>" +
-        "<td>" + "<input class='form-control' id='inputState' placeholder='State' type='text'></td>" +
-        "<td>" + "<input class='form-control' id='inputZip' placeholder='Zip' type='text'></td>" +
+        "<td>" + "<hidden id='addressId" + addressRows + "'/>" +
+        "<hidden id='addressVersion" + addressRows + "'/>" +
+        "<input class='form-control' id='inputStreet" + addressRows + "' placeholder='Street' type='text'>" + "</td>" +
+        "<td>" + "<input class='form-control' id='inputCity" + addressRows + "' placeholder='City' type='text'>" + "</td>" +
+        "<td>" + "<input class='form-control' id='inputState" + addressRows + "' placeholder='State' type='text'></td>" +
+        "<td>" + "<input class='form-control' id='inputZip" + addressRows + "' placeholder='Zip' type='text'></td>" +
         "<td>" + "<input type='button' value='Delete' onclick='deleteRow(this)'>" + "</td>");
     $tbody.append($tr);
+
+    addressRows = addressRows  + 1;
 }
 
 function insertContact() {
@@ -70,22 +86,10 @@ function insertContact() {
     $('#contactVersion').val("");
     $('#employeeId').val("");
     $('#employeeVersion').val("");
-    $('#addressId').val("");
-    $('#addressVersion').val("");
-    $('#projectId').val("");
-    $('#projectVersion').val("");
     $('#inputFirstName').val("");
     $('#inputLastName').val("");
     $('#inputEmail').val("");
     $('#textAreaBackground').val("");
-    $('#inputProjectName').val("");
-    $('#inputClientName').val("");
-    $('#inputFieldRate').val("");
-    $('#inputStreet').val("");
-    $('#inputCity').val("");
-    $('#inputState').val("");
-    $('#inputZip').val("");
-
 
     //open modal
     $('#contactModal').modal('show');
@@ -97,6 +101,33 @@ function insertContact() {
 }
 
 function saveContact() {
+
+    var projArray = [];
+    var addressArray = [];
+
+    for(var i=0;i<$('#project-table tr').length-1;i++) {
+        var element = {
+            id: $('#projectId'+i).val(),
+            version: $('#projectVersion'+i).val(),
+            projectName: $('#inputProjectName'+i).val(),
+            clientName: $('#inputClientName'+i).val(),
+            fieldRate: $('#inputRate'+i).val()
+        }
+        projArray.push(element);
+    }
+
+    for(var j=0;j<$('#address-table tr').length-1;j++) {
+        var element2 = {
+            id: $('#addressId'+j).val(),
+            version: $('#addressVersion'+j).val(),
+            streetAddress: $('#inputStreet'+j).val(),
+            zip: $('#inputZip'+j).val(),
+            state: $('#inputState'+j).val(),
+            city: $('#inputCity'+j).val()
+        }
+        addressArray.push(element2);
+    }
+
     var contactId = $('#contactId').val();
     var contactVersion = $('#contactVersion').val();
     var emailAddress = $('#inputEmail').val();
@@ -105,17 +136,6 @@ function saveContact() {
     var firstName = $('#inputFirstName').val();
     var lastName = $('#inputLastName').val();
     var background = $('#textAreaBackground').val();
-    var projectId = $('#projectId').val();
-    var projectVersion = $('#projectVersion').val();
-    var projectName = $('#inputProjectName').val();
-    var clientName = $('#inputClientName').val();
-    var fieldRate = $('#inputFieldRate').val();
-    var addressId = $('#addressId').val();
-    var addressVersion = $('#addressVersion').val();
-    var streetAddress = $('#inputStreet').val();
-    var zip = $('#inputZip').val();
-    var state = $('#inputState').val();
-    var city = $('#inputCity').val();
 
 
 
@@ -130,43 +150,10 @@ function saveContact() {
             firstName: firstName,
             lastName: lastName,
             background: background,
-            projectList: [
-                {
-                    id: projectId,
-                    version: projectVersion,
-                    projectName: projectName,
-                    clientName: clientName,
-                    fieldRate: fieldRate
-                }
-                // ,{
-                //     id: id,
-                //     version: version,
-                //     projectName: projectName,
-                //     clientName: clientName,
-                //     fieldRate: fieldRate
-                // }
-            ]
+            projectList:
+                projArray
         },
-        addressList: [
-            {
-
-                id: addressId,
-                version: addressVersion,
-                streetAddress: streetAddress,
-                zip: zip,
-                state: state,
-                city: city
-            }
-            // ,{
-            //     id: id,
-            //     version: version,
-            //     streetAddress: streetAddress,
-            //     zip: zip,
-            //     state: state,
-            //     city: city
-            // }
-        ]
-
+        addressList: addressArray
     }
 
     console.log(contact);
@@ -179,8 +166,85 @@ function saveContact() {
         url: "/api/contact/",
         data: JSON.stringify(contact),
         async: true,
-        // success: function() {
-        //     window.location.reload();
-        // }
+        success: function() {
+            window.location.reload();
+        }
     })
+}
+
+function editContact(id) {
+
+    //retrieve the contact with the passed in id
+    $.getJSON('/api/contact/' + id, {
+        ajax: 'true'
+    }, function (contact) {
+        console.log(contact);
+        if($('#project-table tr').length-1 === 0) {
+            for (var i = 0; i < contact.employee.projectList.length; i++) {
+                projectTable();
+                $('#projectId' + i).val(contact.employee.projectList[i].id);
+                $('#projectVersion' + i).val(contact.employee.projectList[i].version);
+                $('#inputProjectName' + i).val(contact.employee.projectList[i].projectName);
+                $('#inputClientName' + i).val(contact.employee.projectList[i].clientName);
+                $('#inputRate' + i).val(contact.employee.projectList[i].fieldRate);
+                console.log(contact.employee.projectList[i]);
+                console.log($('#projectId' + i).val());
+            }
+        }
+
+        if($('#address-table tr').length-1 === 0) {
+            for (var j = 0; j < contact.addressList.length; j++) {
+                addressTable();
+                $('#addressId' + j).val(contact.addressList[j].id);
+                $('#addressVersion' + j).val(contact.addressList[j].version);
+                $('#inputStreet' + j).val(contact.addressList[j].streetAddress);
+                $('#inputState' + j).val(contact.addressList[j].state);
+                $('#inputZip' + j).val(contact.addressList[j].zip);
+                $('#inputCity' + j).val(contact.addressList[j].city);
+                console.log(contact.addressList[j]);
+                console.log($('#addressId' + j).val());
+            }
+        }
+
+
+
+        //populate values (hidden and input)
+        $('#contactId').val(contact.id);
+        $('#contactVersion').val(contact.version);
+        $('#inputEmail').val(contact.emailAddress);
+        $('#employeeId').val(contact.employee.id);
+        $('#employeeVersion').val(contact.employee.version);
+        $('#inputFirstName').val(contact.employee.firstName);
+        $('#inputLastName').val(contact.employee.lastName);
+        $('#textAreaBackground').val(contact.employee.background);
+
+    //open the modal
+    $('#contactModal').modal('show');
+    });
+
+}
+
+function deleteModal() {
+    $('#confirmDeleteModal').on('click','.btn-ok', function (e) {
+        var $modalDiv = $(e.delegateTarget);
+        var id = $(this).data('recordId');
+        $.ajax({
+            type: "delete",
+            url: "/api/contact/" + id,
+            async: true,
+            dataType: "json",
+            success: function () {
+                window.location.reload();
+            },
+            error: function () {
+                alert("Error Deleting Contact");
+            }
+        })
+    });
+
+    $('#confirmDeleteModal').on('show.bs.modal',function (e) {
+        var data = $(e.relatedTarget).data();
+        $('.btn-ok', this).data('recordId',data.recordId);
+    });
+
 }

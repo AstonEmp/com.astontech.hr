@@ -10,7 +10,7 @@
     //this javascript code executes when the page has loaded
     $(document).ready(function() {
         buildTable();
-        //deleteModal();
+        deleteModal();
     })
 </script>
 
@@ -55,8 +55,6 @@
                             <hidden id="employeeVersion" />
                             <hidden id="contactId" />
                             <hidden id="contactVersion" />
-                            <hidden id="addressId" />
-                            <hidden id="addressVersion" />
                             <hidden id="projectId" />
                             <hidden id="projectVersion" />
 
@@ -136,23 +134,23 @@
     </div>
 
 
-    <%--<div id="confirmDeleteModal" class="modal">--%>
-        <%--<div class="modal-dialog">--%>
-            <%--<div class="modal-content">--%>
-                <%--<div class="modal-header">--%>
-                    <%--<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>--%>
-                    <%--<h4 class="modal-title">Confirm Delete</h4>--%>
-                <%--</div>--%>
-                <%--<div class="modal-body">--%>
-                    <%--<p>Are you sure you want to delete? This cannot be undone!</p>--%>
-                <%--</div>--%>
-                <%--<div class="modal-footer">--%>
-                    <%--<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>--%>
-                    <%--<button type="button" class="btn btn-danger btn-ok" data-dismiss="modal" id="confirmDelete">Delete</button>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-    <%--</div>--%>
+    <div id="confirmDeleteModal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Confirm Delete</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete? This cannot be undone!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger btn-ok" data-dismiss="modal" id="confirmDelete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 

@@ -9,7 +9,7 @@
     //this javascript code executes when the page has loaded
     $(document).ready(function() {
         buildTable();
-        //deleteModal();
+        deleteModal();
     })
 </script>
 
