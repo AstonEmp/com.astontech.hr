@@ -1,0 +1,7 @@
+services/ElementTypeServiceTest.class
+services/EmployeeServiceTest.class
+repositories/ElementTypeRepositoryTest.class
+Rest/ContactRestTest.class
+repositories/EmployeeRepositoryTest.class
+services/ElementServiceTest.class
+repositories/ElementRepositoryTest.class

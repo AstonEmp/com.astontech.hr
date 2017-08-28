@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------
+Test set: repositories.ElementRepositoryTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 13.601 sec <<< FAILURE! - in repositories.ElementRepositoryTest
+testCountByName(repositories.ElementRepositoryTest)  Time elapsed: 0.265 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<3>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at repositories.ElementRepositoryTest.testCountByName(ElementRepositoryTest.java:129)
+
+testFindAllByName(repositories.ElementRepositoryTest)  Time elapsed: 0.165 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<3> but was:<4>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at repositories.ElementRepositoryTest.testFindAllByName(ElementRepositoryTest.java:98)
+
+testFindAllByNameIgnoreCase(repositories.ElementRepositoryTest)  Time elapsed: 0.259 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<3> but was:<7>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at repositories.ElementRepositoryTest.testFindAllByNameIgnoreCase(ElementRepositoryTest.java:114)
+
+testSaveElementList(repositories.ElementRepositoryTest)  Time elapsed: 0.104 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<4> but was:<16>
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at org.junit.Assert.assertEquals(Assert.java:631)
+	at repositories.ElementRepositoryTest.testSaveElementList(ElementRepositoryTest.java:72)
+

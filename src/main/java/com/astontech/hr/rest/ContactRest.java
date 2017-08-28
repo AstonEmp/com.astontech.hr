@@ -25,6 +25,7 @@ public class ContactRest
     }
 
     // Get All
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public List<Contact> getAll()
     {
