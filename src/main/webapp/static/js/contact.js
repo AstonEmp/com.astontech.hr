@@ -48,9 +48,9 @@ function projectTable() {
 
         "<td>" + "<hidden id='projectId" + projectRows + "'/>" +
         "<hidden id='projectVersion" + projectRows + "'/>" +
-        "<input class='form-control' id='inputProjectName" + projectRows + "' placeholder='Project Name' type='text'>" + "</td>" +
-        "<td>" + "<input class='form-control' id='inputClientName" + projectRows + "' placeholder='Client Name' type='text'>" + "</td>" +
-        "<td>" + "<input class='form-control' id='inputRate" + projectRows + "' placeholder='Rate' type='text'></td>" +
+        "<input class='form-control' id='inputProjectName" + projectRows + "' placeholder='Project Name' type='text' required='true'>" + "</td>" +
+        "<td>" + "<input class='form-control' id='inputClientName" + projectRows + "' placeholder='Client Name' type='text' required='true'>" + "</td>" +
+        "<td>" + "<input class='form-control' id='inputRate" + projectRows + "' placeholder='Rate' type='number' required='true'></td>" +
         "<td>" + "<input type='button' value='Delete' onclick='deleteRow(this)'>" + "</td>");
 
     $tbody.append($tr);
@@ -70,10 +70,10 @@ function addressTable() {
     $tr.append(
         "<td>" + "<hidden id='addressId" + addressRows + "'/>" +
         "<hidden id='addressVersion" + addressRows + "'/>" +
-        "<input class='form-control' id='inputStreet" + addressRows + "' placeholder='Street' type='text'>" + "</td>" +
-        "<td>" + "<input class='form-control' id='inputCity" + addressRows + "' placeholder='City' type='text'>" + "</td>" +
-        "<td>" + "<input class='form-control' id='inputState" + addressRows + "' placeholder='State' type='text'></td>" +
-        "<td>" + "<input class='form-control' id='inputZip" + addressRows + "' placeholder='Zip' type='text'></td>" +
+        "<input class='form-control' id='inputStreet" + addressRows + "' placeholder='Street' type='text' required='true'>" + "</td>" +
+        "<td>" + "<input class='form-control' id='inputCity" + addressRows + "' placeholder='City' type='text' required='true'>" + "</td>" +
+        "<td>" + "<input class='form-control' id='inputState" + addressRows + "' placeholder='State' type='text' required='true'></td>" +
+        "<td>" + "<input class='form-control' id='inputZip" + addressRows + "' placeholder='Zip' type='text' required='true'></td>" +
         "<td>" + "<input type='button' value='Delete' onclick='deleteRow(this)'>" + "</td>");
     $tbody.append($tr);
 

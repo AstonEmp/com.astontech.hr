@@ -63,28 +63,28 @@
                             <div class="form-group">
                                 <label for="inputFirstName" class="col-lg-2 control-label">FirstName</label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" id="inputFirstName" placeholder="First Name" type="text">
+                                    <input class="form-control" id="inputFirstName" placeholder="First Name" type="text" required="true">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="inputLastName" class="col-lg-2 control-label">LastName</label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" id="inputLastName" placeholder="Last Name" type="text">
+                                    <input class="form-control" id="inputLastName" placeholder="Last Name" type="text" required="true">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                                 <div class="col-lg-10">
-                                    <input class="form-control" id="inputEmail" placeholder="Email" type="text">
+                                    <input class="form-control" id="inputEmail" placeholder="Email" type="text" required="true">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="textAreaBackground" class="col-lg-2 control-label">Background</label>
                                 <div class="col-lg-10">
-                                    <textarea class="form-control" rows="3" id="textAreaBackground"></textarea>
+                                    <textarea class="form-control" rows="3" id="textAreaBackground" required="true"></textarea>
                                 </div>
                             </div>
 
