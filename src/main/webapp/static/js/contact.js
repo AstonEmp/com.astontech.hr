@@ -104,7 +104,19 @@ function saveContact() {
 
     var projArray = [];
     var addressArray = [];
+    var result = true;
 
+    for(var k=0;k<$('#project-table tr').length-1;k++) {
+        if(checkInput($('#inputRate'+k).val())) {
+
+        } else {
+            result = false;
+            break;
+        }
+    }
+
+
+    if(result ) {
     for(var i=0;i<$('#project-table tr').length-1;i++) {
         var element = {
             id: $('#projectId'+i).val(),
@@ -170,6 +182,10 @@ function saveContact() {
             window.location.reload();
         }
     })
+    }
+    else {
+        alert("Must input numbers in rate field");
+    }
 }
 
 function editContact(id) {
@@ -247,4 +263,12 @@ function deleteModal() {
         $('.btn-ok', this).data('recordId',data.recordId);
     });
 
+}
+
+function checkInput(x) {
+    var regex=/^[0-9]+$/;
+    if(x.match(regex))
+    {
+        return false;
+    }
 }
