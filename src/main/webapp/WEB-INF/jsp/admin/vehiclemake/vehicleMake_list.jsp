@@ -24,14 +24,12 @@
                 <c:set var="vehicle_idx" value="0" scope="page"/>
 
                 <c:forEach var="vehicleMake" items="${vehicleMakeList}">
-
                             <tr>
                                 <td>${vehicleMake.id}</td>
                                 <td>${vehicleMake.vehicleMakeName}</td>
                                 <td><a href="/admin/vehicleMake/edit/${vehicleMake.id}">Edit</a></td>
                                 <td><a href="/admin/vehicleMake/delete/${vehicleMake.id}">Delete</a></td>
                             </tr>
-
                 </c:forEach>
                 </tbody>
             </table>

@@ -36,10 +36,10 @@ public class SeedData implements ApplicationListener<ContextRefreshedEvent>
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event)
     {
-        //generateElementAndElementTypeNames();
-        //generateVehiclesVehicleModelsAndVehicleMakes();
-        //generateEmployees();
-        //generateContacts();
+//        generateElementAndElementTypeNames();
+//        generateVehiclesVehicleModelsAndVehicleMakes();
+//        generateEmployees();
+//        generateContacts();
     }
 
     public void generateEmployees()
@@ -54,19 +54,19 @@ public class SeedData implements ApplicationListener<ContextRefreshedEvent>
         employee2.setFirstName("Jesse");
         employee2.setLastName("Braun");
         employee2.setBackground("Electrical Engineer");
-        employeeService.saveEmployee(employee);
+        employeeService.saveEmployee(employee2);
 
         Employee employee3 = new Employee();
         employee3.setFirstName("Tony");
         employee3.setLastName("Morano");
         employee3.setBackground("Java Developer");
-        employeeService.saveEmployee(employee);
+        employeeService.saveEmployee(employee3);
 
         Employee employee4 = new Employee();
         employee4.setFirstName("Bipin");
         employee4.setLastName("Butala");
         employee4.setBackground("Java Developer");
-        employeeService.saveEmployee(employee);
+        employeeService.saveEmployee(employee4);
     }
 
     public void generateVehiclesVehicleModelsAndVehicleMakes()

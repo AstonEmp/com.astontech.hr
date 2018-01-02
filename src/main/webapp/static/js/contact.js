@@ -15,7 +15,7 @@ function buildTable() {
                 "<td>" + single.employee.background + "</td>");
 
             var $s1 = $("<select class='form-control'><options>single.employee.projectList</options></select>");
-            $.each(single.employee.projectList, function(_, project) {
+            $.each(single.employee.projectList, function(_, project) {Node.parentNode
                 $s1.append('<option value="'+ project.projectName +'">'+ project.projectName +'</option>')
             });
             $tr.append($("<td/>").append($s1));
